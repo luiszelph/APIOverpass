@@ -15,6 +15,16 @@ builder.Services.AddDbContext<DbOverpassContext>(option =>
     option.UseSqlServer(builder.Configuration.GetConnectionString("cadenaSQL"));
 });
 
+// Configurar CORS
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAngularApp",
+        builder => builder
+            .WithOrigins("http://localhost:4200") // Cambia esto a la URL de tu app Angular
+            .AllowAnyHeader()
+            .AllowAnyMethod());
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -23,6 +33,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+// Aplicar CORS
+app.UseCors("AllowAngularApp");
 
 app.UseAuthorization();
 
