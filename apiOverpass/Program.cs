@@ -15,6 +15,21 @@ builder.Services.AddDbContext<DbOverpassContext>(option =>
     option.UseSqlServer(builder.Configuration.GetConnectionString("cadenaSQL"));
 });
 
+var origenesPermitidos = builder.Configuration.GetValue<string>("OrigenesPermitidos")!.Split(",");
+
+builder.Services.AddCors(options =>
+{
+    //options.AddPolicy("AllowAngularApp",
+    //    builder => builder
+    //        .WithOrigins("http://localhost:4200") // Cambia esto a la URL de tu app Angular
+    //        .AllowAnyHeader()
+    //        .AllowAnyMethod());
+    options.AddDefaultPolicy(politica => 
+    {
+        politica.WithOrigins(origenesPermitidos).AllowAnyHeader().AllowAnyMethod();
+    });
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -23,6 +38,12 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseHttpsRedirection();
+
+//app.UseCors("AllowAngularApp");
+
+app.UseCors();
 
 app.UseAuthorization();
 
