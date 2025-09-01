@@ -8,20 +8,21 @@ namespace apiOverpass.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class IngresosController : ControllerBase
+    public class EgresosController : ControllerBase
     {
         private readonly DbOverpassContext _baseDatos;
 
-        public IngresosController(DbOverpassContext baseDatos)
+        public EgresosController(DbOverpassContext baseDatos)
         {
             _baseDatos = baseDatos;
         }
 
         [HttpGet]
-        [Route("ListaIngresos")]
-        public async Task<ActionResult> ListaIngresos() {
-            var listaIngresos = await _baseDatos.TablaIngresos.ToListAsync();
-            return Ok(listaIngresos);
+        [Route("ListaEgresos")]
+        public async Task<ActionResult> ListaEgresos()
+        {
+            var listaEgresos = await _baseDatos.TablaEgresos.ToListAsync();
+            return Ok(listaEgresos);
         }
 
     }
