@@ -19,7 +19,7 @@ namespace apiOverpass.Controllers
         }
 
         /// <summary>
-        /// (2.1) Traer el listado de todos los Egresos
+        /// (1.1) Traer el listado de todos los Egresos
         /// </summary>
         /// <returns></returns>
 
@@ -32,7 +32,7 @@ namespace apiOverpass.Controllers
         }
 
         /// <summary>
-        /// (2.2) Traer un Egreso
+        /// (1.2) Traer un Egreso
         /// </summary>
         /// <param name="egresoId"></param>
         /// <returns></returns>
@@ -60,7 +60,7 @@ namespace apiOverpass.Controllers
         }
 
         /// <summary>
-        /// (2.3) Metodo para insertar nuevo Egreso
+        /// (1.3) Metodo para insertar nuevo Egreso
         /// </summary>
         /// <param name="tablaEgreso"></param>
         /// <returns></returns>
@@ -75,7 +75,7 @@ namespace apiOverpass.Controllers
         }
 
         /// <summary>
-        /// (2.4) Traer un Egreso
+        /// (1.4) Actualizar un Egreso
         /// </summary>
         /// <returns></returns>
 
@@ -104,7 +104,7 @@ namespace apiOverpass.Controllers
         }
 
         /// <summary>
-        /// (2.5) Realizar baja lógica de un registro de Egreso
+        /// (1.5) Realizar baja lógica de un registro de Egreso
         /// </summary>
         /// <param name="egresoId"></param>
         /// <returns></returns>
