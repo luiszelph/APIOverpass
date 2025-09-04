@@ -1,9 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using apiOverpass.Models;
-using Microsoft.Data.SqlClient;
 
 namespace apiOverpass.Controllers
 {
@@ -100,7 +97,6 @@ namespace apiOverpass.Controllers
             {
                 return StatusCode(500, new { mensaje = ex });
             }
-
         }
 
         /// <summary>

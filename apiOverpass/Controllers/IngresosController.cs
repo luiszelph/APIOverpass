@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using apiOverpass.Models;
 
@@ -41,14 +39,14 @@ namespace apiOverpass.Controllers
         {
             try
             {
-                var egreso = await _baseDatos.TablaIngresos.FirstOrDefaultAsync(x => x.IngresoId == ingresoId);
+                var ingreso = await _baseDatos.TablaIngresos.FirstOrDefaultAsync(x => x.IngresoId == ingresoId);
 
-                if (egreso == null)
+                if (ingreso == null)
                 {
                     return NotFound(new { mensaje = "Ingreso no encontrado" });
                 }
 
-                return Ok(egreso);
+                return Ok(ingreso);
             }
             catch (Exception ex)
             {
@@ -87,7 +85,7 @@ namespace apiOverpass.Controllers
 
                 if (!existeIngreso)
                 {
-                    return NotFound(new { mensaje = "Egreso no encontrado" });
+                    return NotFound(new { mensaje = "Ingreso no encontrado" });
                 }
 
                 _baseDatos.Update(tablaIngreso);
@@ -98,7 +96,6 @@ namespace apiOverpass.Controllers
             {
                 return StatusCode(500, new { mensaje = ex });
             }
-
         }
 
         /// <summary>
