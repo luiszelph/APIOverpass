@@ -75,7 +75,7 @@ namespace apiOverpass.Controllers
         /// (5.4) Actualizar un Cliente
         /// </summary>
         /// <returns></returns>
-        //5.4
+        
         [HttpPut]
         [Route("{clienteId:int}", Name = "ActualizarCliente")]
         public async Task<ActionResult> ActualizarCliente(int clienteId, TablaCliente tablaCliente)
