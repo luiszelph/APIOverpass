@@ -23,7 +23,7 @@ public partial class DbOverpassContext : DbContext
 
     public virtual DbSet<TablaIngreso> TablaIngresos { get; set; }
 
-    public virtual DbSet<TablaProveedore> TablaProveedores { get; set; }
+    public virtual DbSet<TablaProveedor> TablaProveedores { get; set; }
 
     public virtual DbSet<TablaRolesEmpleado> TablaRolesEmpleados { get; set; }
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace apiOverpass.Models;
 
-public partial class TablaProveedore
+public partial class TablaProveedor
 {
     public int ProveedorId { get; set; }
 

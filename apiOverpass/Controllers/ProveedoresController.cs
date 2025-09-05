@@ -36,7 +36,7 @@ namespace apiOverpass.Controllers
 
         [HttpGet]
         [Route("{proveedorId:int}", Name = "ObtenerProveedor")]
-        public async Task<ActionResult<TablaProveedore>> ObtenerProveedor(int proveedorId)
+        public async Task<ActionResult<TablaProveedor>> ObtenerProveedor(int proveedorId)
         {
             try
             {
@@ -64,7 +64,7 @@ namespace apiOverpass.Controllers
 
         [HttpPost]
         [Route("InsertarProveedor")]
-        public async Task<CreatedAtRouteResult> InsertarProveedor(TablaProveedore tablaProveedor)
+        public async Task<CreatedAtRouteResult> InsertarProveedor(TablaProveedor tablaProveedor)
         {
             _baseDatos.TablaProveedores.Add(tablaProveedor);
             await _baseDatos.SaveChangesAsync();
@@ -78,7 +78,7 @@ namespace apiOverpass.Controllers
 
         [HttpPut]
         [Route("{proveedorId:int}", Name = "ActualizarProveedor")]
-        public async Task<ActionResult> ActualizarProveedor(int proveedorId, TablaProveedore tablaProveedor)
+        public async Task<ActionResult> ActualizarProveedor(int proveedorId, TablaProveedor tablaProveedor)
         {
             try
             {
