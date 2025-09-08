@@ -174,7 +174,7 @@ public partial class DbOverpassContext : DbContext
                 .HasColumnName("usoDescripcion");
         });
 
-        modelBuilder.Entity<TablaProveedore>(entity =>
+        modelBuilder.Entity<TablaProveedor>(entity =>
         {
             entity.HasKey(e => e.ProveedorId).HasName("PK__TablaPro__8253255DF083EEC3");
 
